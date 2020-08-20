@@ -1,0 +1,13 @@
+<template>
+  <lightning-input label="Record Id" onchange={handleValueChange}> </lightning-input>
+  <lightning-file-upload
+    label="Attach Image"
+    name="fileUploader"
+    accept={acceptedFormats}
+    record-id={recordId}
+    file-field-name="GuestReference_fileupload__c"
+    file-field-value={encryptedToken}
+    onuploadfinished={handleUploadFinished}
+  >
+  </lightning-file-upload>
+</template>
