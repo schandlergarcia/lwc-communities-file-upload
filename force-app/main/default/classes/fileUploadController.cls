@@ -58,8 +58,7 @@ public without sharing class fileUploadController {
   }
 
   public static contentDocument getRelatedContentDocument(String token) {
-    List<ContentDocument> contentDocuments = [SELECT Id FROM ContentDocument ORDER BY CreatedDate DESC];
-    //List<ContentDocument> contentDocuments = [SELECT Id FROM ContentDocument WHERE LatestPublishedVersion.GuestReference_fileupload__c = :token ORDER BY CreatedDate DESC];
+    List<ContentDocument> contentDocuments = [SELECT Id FROM ContentDocument WHERE LatestPublishedVersion.GuestReference_fileupload__c = :token ORDER BY CreatedDate DESC];
     ContentDocument contentDocument = contentDocuments.size() == 1 ? contentDocuments.get(0) : null;
     return contentDocument;
   }
